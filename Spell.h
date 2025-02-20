@@ -19,15 +19,15 @@ public:
 	Spell() : spellDefinition(""), spellMana(0), type(Fire) {};
 	Spell(string s, size_t m, SpellType t);
 
-	string GetSpellDefinition() {
+	const string GetSpellDefinition() const{
 		return spellDefinition;
 	}
 
-	size_t GetSpellMana() {
+	const size_t GetSpellMana() const{
 		return spellMana;
 	}
 
-	SpellType GetType() {
+	const SpellType GetType() const{
 		return type;
 	}
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "Soldier.h"
-class Leader :
-    public Soldier
+
+class Leader : public Soldier
 {
 };
 
