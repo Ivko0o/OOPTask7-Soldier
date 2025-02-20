@@ -7,7 +7,7 @@ void MagicBook::AddSpell(string s, size_t m, SpellType t) {
 
 
 void MagicBook::UseSpell(const Spell& sp) {
-	for (auto it = spells.begin(); it != spells.end(); ) {
+	for (auto it = spells.begin(); it != spells.end();) {
 		if (it->GetSpellDefinition() == sp.GetSpellDefinition()) {
 			it = spells.erase(it);
 		}
