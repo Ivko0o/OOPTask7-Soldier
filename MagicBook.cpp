@@ -1,11 +1,12 @@
 #include "MagicBook.h"
 
+//Adds spell to the magic book
 void MagicBook::AddSpell(string s, size_t m, SpellType t) {
 	Spell spell(s, m, t);
 	spells.push_back(spell);
 }
 
-
+//Used spells are erased from the magic book
 void MagicBook::UseSpell(const Spell& sp) {
 	for (auto it = spells.begin(); it != spells.end();) {
 		if (it->GetSpellDefinition() == sp.GetSpellDefinition()) {
@@ -17,6 +18,7 @@ void MagicBook::UseSpell(const Spell& sp) {
 	}
 }
 
+//Print all spells in a book
 void MagicBook::PrintSpells() {
 	for (auto& spell : spells) {
 		cout << "\nSpell Info\n";
@@ -27,6 +29,7 @@ void MagicBook::PrintSpells() {
 	}
 }
 
+//Used to convert the skill type to string
 string ToString(SpellType type) {
 	switch (type) {
 	case SpellType::Fire: return "Fire";

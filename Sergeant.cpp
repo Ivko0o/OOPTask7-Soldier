@@ -1,7 +1,7 @@
 #include "Sergeant.h"
 
 void Sergeant::PrintSoldiers() {
-	for (auto& soldier : soldiers) {
+	for (auto& soldier : platoon) {
 		std::cout << "\nSoldier Info\n";
 		std::cout << "---------------\n";
 		std::cout << "Name: " << soldier.GetName() << "\n";
@@ -12,11 +12,19 @@ void Sergeant::PrintSoldiers() {
 	}
 }
 
-int Sergeant::TotalSoldiersCombatSkills() {
-	int total = 0;
-	for (auto& soldier : soldiers) {
+bool Sergeant::AddSoldier(const Soldier& soldier) {
+	platoon.push_back(soldier);
+}
+
+size_t Sergeant::TotalSoldiersCombatSkills() {
+	size_t total = 0;
+	for (auto& soldier : platoon) {
 		total += soldier.GetCombatSkills();
 	}
 
 	return total;
+}
+
+string Sergeant::GetPlatoonDefinition() {
+	return platoonDefinition;
 }

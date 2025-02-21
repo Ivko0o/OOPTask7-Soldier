@@ -10,7 +10,6 @@ public:
 	Soldier() : name(" "), age(0), combatSkills(0), salary(0) {};
 	Soldier(string n, size_t a, size_t c, size_t s);
 
-
 	string GetName() {
 		return name;
 	}
