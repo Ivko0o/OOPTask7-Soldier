@@ -11,3 +11,12 @@ void Sergeant::PrintSoldiers() {
 
 	}
 }
+
+int Sergeant::TotalSoldiersCombatSkills() {
+	int total = 0;
+	for (auto& soldier : soldiers) {
+		total += soldier.GetCombatSkills();
+	}
+
+	return total;
+}

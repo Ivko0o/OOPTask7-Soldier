@@ -6,12 +6,12 @@ class Sergeant : public Soldier
 {
 public:
 	Sergeant(string n, size_t a, size_t c, size_t s, string p) : Soldier(n, a, c, s), platoonDefinition(p) {};
+	void PrintSoldiers();
+	int TotalSoldiersCombatSkills();
 
 	string GetPlatoonDefinition() {
 		return platoonDefinition;
 	}
-
-	void PrintSoldiers();
 
 private:
 	string platoonDefinition;

@@ -9,9 +9,10 @@ string ToString(SpellType type);
 
 class MagicBook
 {
+public:
+	MagicBook() : bookName("") {};
 	MagicBook(string bN) : bookName(bN) {};
 
-public:
 	void AddSpell(string s, size_t m, SpellType t);
 	void UseSpell(const Spell& sp);
 	void PrintSpells();
