@@ -10,6 +10,8 @@ public:
 
 	void AddMag(const Magician& mag);
 	size_t TotalMagPower();
+	double AverageMagPower();
+	void LeaderInfo();
 
 private:
 	string armyDefinition;

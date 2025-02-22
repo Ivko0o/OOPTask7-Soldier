@@ -10,19 +10,19 @@ public:
 	Soldier() : name(" "), age(0), combatSkills(0), salary(0) {};
 	Soldier(string n, size_t a, size_t c, size_t s);
 
-	string GetName() {
+	const string GetName() const{
 		return name;
 	}
 
-	size_t GetAge() {
+	const size_t GetAge() const {
 		return age;
 	}
 
-	size_t GetCombatSkills() {
+	const size_t GetCombatSkills() const {
 		return combatSkills;
 	}
 
-	size_t GetSalary() {
+	const size_t GetSalary() const {
 		return salary;
 	}
 

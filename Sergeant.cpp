@@ -12,7 +12,7 @@ void Sergeant::PrintSoldiers() {
 	}
 }
 
-bool Sergeant::AddSoldier(const Soldier& soldier) {
+void Sergeant::AddSoldier(const Soldier& soldier) {
 	platoon.push_back(soldier);
 }
 

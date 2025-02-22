@@ -8,13 +8,7 @@
 
 int main()
 {
-	try {
-		Soldier soldier1("Ivelin", 33, 300, 2000);
-	}
-	catch (const char* txt) {
-		cout << "\nError: " << txt << "\n";
-	}
-	
 
+	
 }
 
