@@ -13,9 +13,12 @@ public:
 	MagicBook() : bookName("") {};
 	MagicBook(string bN) : bookName(bN) {};
 
-	void AddSpell(string s, size_t m, SpellType t);
-	void UseSpell(const Spell& sp);
+	void AddSpell(const Spell& spell);
 	void PrintSpells();
+
+	vector<Spell>& GetSpells() {
+		return spells;
+	}
 
 private:
 	string bookName;

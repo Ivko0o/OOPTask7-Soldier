@@ -1,21 +1,8 @@
 #include "MagicBook.h"
 
 //Adds spell to the magic book
-void MagicBook::AddSpell(string s, size_t m, SpellType t) {
-	Spell spell(s, m, t);
+void MagicBook::AddSpell(const Spell& spell) {
 	spells.push_back(spell);
-}
-
-//Used spells are erased from the magic book
-void MagicBook::UseSpell(const Spell& sp) {
-	for (auto it = spells.begin(); it != spells.end();) {
-		if (it->GetSpellDefinition() == sp.GetSpellDefinition()) {
-			it = spells.erase(it);
-		}
-		else {
-			++it;
-		}
-	}
 }
 
 //Print all spells in a book
