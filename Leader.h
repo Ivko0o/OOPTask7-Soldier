@@ -13,6 +13,26 @@ public:
 	double AverageMagPower();
 	void LeaderInfo();
 
+
+	double AmryTotalSalary() {
+		double totalSalary = 0;
+		for (auto& magician : magicians) {
+			const vector<Sergeant>& allSergeants = magician.GetSergeants();
+			for (auto& sergeant : allSergeants) {
+				const vector<Soldier>& allSoldiers = sergeant.GetPlatoon();
+				for (auto& soldier : allSoldiers) {
+					totalSalary += soldier.GetSalary();
+				}
+				totalSalary += sergeant.GetSalary();
+			}
+			totalSalary += magician.GetSalary();
+		}
+
+		return totalSalary;
+	}
+
+
+
 private:
 	string armyDefinition;
 	vector<Magician> magicians;

@@ -25,6 +25,7 @@ public:
 		return platoon;
 	}
 
+
 private:
 	string platoonDefinition;
 	vector<Soldier> platoon;

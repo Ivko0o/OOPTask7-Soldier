@@ -8,51 +8,45 @@
 
 int main()
 {
-	Spell FireBall("Fire Ball", 200, Fire);
-	Spell IceWall("Ice Wall", 300, Water);
-	Spell MudGolem("Mud Golem", 500, Earth);
-	Spell FrostBite("Frost Bite", 250, Water);
-	Spell Tornado("Tornado", 100, Air);
+	Spell FireBall("Fireball", 150, Fire);
+	Spell IceBlast("IceBlast", 200, Water);
+	Spell MudGolem("MudGolem", 100, Earth);
 	Spell Meteor("Meteor", 300, Fire);
+	Spell Tornado("Tornado", 250, Air);
+	Spell FrostBite("FrostBite", 220, Water);
 
 	MagicBook spellBook1;
 	MagicBook spellBook2;
 
 	spellBook1.AddSpell(FireBall);
-	spellBook1.AddSpell(IceWall);
+	spellBook1.AddSpell(IceBlast);
 	spellBook1.AddSpell(MudGolem);
-	spellBook2.AddSpell(FrostBite);
-	spellBook2.AddSpell(Tornado);
 	spellBook2.AddSpell(Meteor);
+	spellBook2.AddSpell(Tornado);
+	spellBook2.AddSpell(FrostBite);
 
-	Sergeant sergeant1("Mitio", 35, 1000, 500, "Platoon I");
-	Sergeant sergeant2("Ganio", 25, 1500, 500, "Platoon II");
-	Sergeant sergeant3("Williams", 29, 2000, 500, "Platoon III");
-	Sergeant sergeant4("Matthew", 40, 2500, 500, "Platoon IV");
+	Soldier Ivelin("Ivelin", 33, 1000, 500);
+	Soldier Martin("Martin", 36, 1200, 500);
+	Soldier Todor("Todor", 33, 1000, 500);
+	Soldier Velina("Velina", 29, 1000, 500);
 
+	Sergeant Sergeant1("Simeon", 33, 2000, 1000, "Platoon I");
+	Sergeant Sergeant2("Panayot", 33, 2500, 1000, "Platoon II");
 
-	Magician DarkMagician("Dark Magician", 22, 3000, 2000, "Battalion I", 5000, spellBook1);
-	DarkMagician.AddSergeant(sergeant1);
-	DarkMagician.AddSergeant(sergeant2);
+	Sergeant1.AddSoldier(Ivelin);
+	Sergeant1.AddSoldier(Martin);
+	Sergeant2.AddSoldier(Todor);
+	Sergeant2.AddSoldier(Velina);
 
-	Magician WhiteMagician("White Magician", 30, 5000, 7000, "Battalion II", 10000, spellBook2);
-	WhiteMagician.AddSergeant(sergeant3);
-	WhiteMagician.AddSergeant(sergeant4);
+	Magician Tihomir("Tihomir", 34, 3000, 2500, "Battalion I", 10000, spellBook1);
+	Magician Miroslav("Miroslav", 34, 3000, 2500, "Battalion II", 10000, spellBook2);
+	Tihomir.AddSergeant(Sergeant1);
+	Miroslav.AddSergeant(Sergeant2);
 
+	Leader Georgi("Georgi", 36, 10000, 20000, "Army I");
+	Georgi.AddMag(Tihomir);
+	Georgi.AddMag(Miroslav);
 
-	cout << DarkMagician.GetMagMana() << endl;
-	cout << WhiteMagician.GetMagMana() << endl;
-
-	DarkMagician.PrintSpells();
-
-	DarkMagician.UseSpell(FireBall);
-
-	cout << DarkMagician.GetMagMana() << endl;
-
-	DarkMagician.PrintSpells();
-
-
-
-
+	cout << Georgi.AmryTotalSalary();
 	
 }
